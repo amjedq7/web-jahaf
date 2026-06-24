@@ -9,8 +9,8 @@ export default function Onas() {
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="grid lg:grid-cols-5">
           
-          {/* Left Side: Profile Image (Darker gray background) */}
-          <div className="lg:col-span-2 bg-slate-100 flex justify-center items-center p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-slate-200">
+          {/* Left Side: Profile Image */}
+          <div className="lg:col-span-2 bg-white flex justify-center items-center p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-slate-100">
             <img 
               src="/galerie/web-jahaf-profile.jpg" 
               alt="MUDr. Abbas Jahaf" 
@@ -18,8 +18,8 @@ export default function Onas() {
             />
           </div>
 
-          {/* Right Side: Text Content (Darker gray background) */}
-          <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center bg-slate-100">
+          {/* Right Side: Text Content */}
+          <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center bg-white">
             
             <div className="mb-8">
               <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 mb-3">
@@ -39,10 +39,9 @@ export default function Onas() {
               </p>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-slate-200">
+            <div className="mt-10 pt-8 border-t border-slate-100">
               <div className="flex items-center gap-5">
-                {/* Changed to white background so it pops against the new gray background */}
-                <div className="w-14 h-14 bg-white shadow-sm border border-slate-200 rounded-2xl flex items-center justify-center text-blue-700 text-2xl shrink-0">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-700 text-2xl shrink-0">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>

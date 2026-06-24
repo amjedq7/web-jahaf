@@ -1,65 +1,120 @@
-import { Link } from 'react-router-dom'
-
 export default function Sluzby() {
   const services = [
     {
-      title: "Komplexní urologické vyšetření",
-      description: "Diagnostika a léčba onemocnění ledvin, močových cest a mužských pohlavních orgánů.",
-      icon: "🩺"
+      title: "Vyšetření močových cest",
+      desc: "Komplexní diagnostika a léčba onemocnění močových cest. Řešení problémů s močovou inkontinencí a léčba močových kamenů."
     },
     {
-      title: "Ultrazvuková diagnostika (SONO)",
-      description: "Moderní a bezbolestné vyšetření močového ústrojí a orgánů šourku pomocí ultrazvuku.",
-      icon: "🖥️"
+      title: "Nádorová onemocnění",
+      desc: "Prevence, včasná diagnostika a léčba nádorových onemocnění ledvin, prostaty, močového měchýře a varlat. Léčba zánětů prostaty."
     },
     {
-      title: "Preventivní vyšetření prostaty",
-      description: "Včasná diagnostika onemocnění prostaty včetně odběrů krve na nádorové markery (PSA).",
-      icon: "👨‍⚕️"
+      title: "Onemocnění varlat",
+      desc: "Odborné vyšetření a léčba akutních i chronických onemocnění varlat a šourku s využitím moderních diagnostických metod."
+    },
+    {
+      title: "Ultrazvuk a diagnostika",
+      desc: "Kompletní ultrazvuková diagnostika močových cest, vyšetřování tumor-markerů (PSA) a provádění biopsií."
     },
     {
       title: "Uroflowmetrie",
-      description: "Speciální vyšetření průtoku moči pro odhalení funkčních poruch dolních močových cest.",
-      icon: "💧"
+      desc: "Neinvazivní a bezbolestné vyšetření průtoku moči pro přesnou diagnostiku poruch močení a stavu zbytnělé prostaty."
     },
     {
-      title: "Biopsie prostaty",
-      description: "Odběr vzorků tkáně prostaty při podezření na závažnější onemocnění, prováděno ambulantně.",
-      icon: "🔬"
-    },
-    {
-      title: "Drobné chirurgické zákroky",
-      description: "Provádění menších urologických zákroků přímo v prostředí naší moderní ambulance.",
-      icon: "🩹"
+      title: "Cystoskopie",
+      desc: "Detailní endoskopické vyšetření močového měchýře a močové trubice pomocí špičkového cystoskopu přímo v naší ordinaci."
     }
   ]
 
   return (
     <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
-      <div className="text-center max-w-7xl mx-auto mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 mb-4">Naše Služby</h1>
-        <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-          Poskytujeme široké spektrum diagnostických a léčebných postupů v oboru urologie s využitím moderního přístrojového vybavení.
-        </p>
+      
+      {/* Header Section */}
+      <div className="text-center max-w-7xl mx-auto mb-12">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950">
+          S čím Vám můžeme pomoci?
+        </h1>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      {/* Services Grid */}
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
         {services.map((service, index) => (
-          <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <div className="text-4xl mb-4">{service.icon}</div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
-            <p className="text-slate-600 leading-relaxed">{service.description}</p>
+          <div 
+            key={index}
+            className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-100 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
+          >
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
+              {service.title}
+            </h3>
+            <p className="text-slate-600 leading-relaxed">
+              {service.desc}
+            </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-16 text-center bg-blue-50 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-100">
-        <h3 className="text-2xl font-bold text-blue-950 mb-4">Potřebujete vyšetření?</h3>
-        <p className="text-slate-700 mb-6">Neodkládejte své zdravotní potíže. Objednejte se na vyšetření ještě dnes.</p>
-        <Link to="/kontakt" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-full font-semibold shadow-sm transition-colors">
-          Zobrazit kontakty pro objednání
-        </Link>
+      {/* Equipment Section */}
+      <div className="max-w-6xl mx-auto bg-slate-50 rounded-3xl p-8 md:p-16 border border-slate-100">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-950 text-center mb-12">
+          Vybavení ordinace
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-12 text-center">
+          
+          {/* Sonograf */}
+          <div className="flex flex-col items-center">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 p-4 overflow-hidden group">
+              <img 
+                src="/galerie/sonograf.jpg" 
+                alt="Sonograf" 
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.classList.add('bg-slate-100');
+                }}
+              />
+              <span className="text-5xl text-slate-300 absolute -z-10">🖥️</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">Sonograf</h3>
+          </div>
+
+          {/* Uroflowmetrie */}
+          <div className="flex flex-col items-center">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 p-4 overflow-hidden group">
+              <img 
+                src="/galerie/uroflowmetrie.jpg" 
+                alt="Uroflowmetrie" 
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.classList.add('bg-slate-100');
+                }}
+              />
+              <span className="text-5xl text-slate-300 absolute -z-10">🔬</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">Uroflowmetrie</h3>
+          </div>
+
+          {/* Cystoskop */}
+          <div className="flex flex-col items-center">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 p-4 overflow-hidden group">
+              <img 
+                src="/galerie/cystoskop.jpg" 
+                alt="Cystoskop" 
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement?.classList.add('bg-slate-100');
+                }}
+              />
+              <span className="text-5xl text-slate-300 absolute -z-10">🔦</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900">Cystoskop</h3>
+          </div>
+
+        </div>
       </div>
+
     </div>
   )
 }
