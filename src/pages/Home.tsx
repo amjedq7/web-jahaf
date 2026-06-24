@@ -7,7 +7,7 @@ export default function Home() {
       
       {/* HERO SEKCE */}
       <section 
-        className="relative bg-cover bg-center bg-no-repeat lg:h-[600px] flex items-center py-20 lg:py-0"
+        className="relative bg-cover bg-center bg-no-repeat min-h-[600px] flex items-center py-24"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-950/80 to-blue-900/40"></div>
@@ -56,26 +56,26 @@ export default function Home() {
                 {/* Přijímáme nové pacienty */}
                 <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-4 flex items-start gap-4">
                   <div className="text-emerald-400 mt-0.5">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">Přijímáme nové pacienty</h4>
-                    <p className="text-emerald-100 text-sm mt-1">Ordinace je plně otevřena pro nové pacienty.</p>
+                    <h4 className="font-semibold text-emerald-100 text-lg">Přijímáme nové pacienty</h4>
+                    <p className="text-sm text-emerald-200/80 mt-1">Kapacita ordinace aktuálně umožňuje registraci nových pacientů.</p>
                   </div>
                 </div>
 
-                {/* Objednávání */}
-                <div className="bg-blue-500/20 border border-blue-400/30 rounded-xl p-4 flex items-start gap-4">
-                  <div className="text-blue-300 mt-0.5">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                {/* Upozornění na dovolenou */}
+                <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 flex items-start gap-4">
+                  <div className="text-amber-400 mt-0.5">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-white">Nutné objednání</h4>
-                    <p className="text-blue-100 text-sm mt-1">K vyšetření se prosím předem objednejte.</p>
+                    <h4 className="font-semibold text-amber-100 text-lg">Dovolená</h4>
+                    <p className="text-sm text-amber-200/80 mt-1">Ve dnech 1. 7. – 15. 7. 2026 bude ordinace uzavřena.</p>
                   </div>
                 </div>
 
