@@ -37,7 +37,7 @@ export default function Home() {
               </Link>
               <Link 
                 to="/sluzby" 
-                className="bg-blue-600 hover:bg-blue-500 text-white text-center px-8 py-3.5 rounded-lg font-semibold shadow-lg transition-colors"
+                className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-3.5 rounded-lg font-semibold backdrop-blur-sm border border-white/20 transition-colors"
               >
                 Služby
               </Link>
