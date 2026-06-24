@@ -89,34 +89,31 @@ export default function Home() {
       {/* TŘI HLAVNÍ PILÍŘE ORDINACE */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Proč navštívit naš ordinaci?</h2>
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Proč navštívit naši ordinaci?</h2>
           <p className="text-slate-600 text-lg">Zakládáme si na profesionalitě, špičkové diagnostice a individuálním přístupu ke každému pacientovi.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Výhoda 1 */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-2xl mb-6">🩺</div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Moderní diagnostika</h3>
-            <p className="text-slate-600">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">Moderní diagnostika</h3>
+            <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
               Ordinace je vybavena pro kompletní ultrazvukovou diagnostiku, vyšetřování tumor-markerů (PSA) i provádění biopsií.
             </p>
           </div>
 
           {/* Výhoda 2 */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-2xl mb-6">👨‍⚕️</div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Zkušený specialista</h3>
-            <p className="text-slate-600">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">Zkušený specialista</h3>
+            <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
               MUDr. Jahaf má bohaté zkušenosti s léčbou urologických onemocnění. Mluví česky, anglicky, německy a arabsky.
             </p>
           </div>
 
           {/* Výhoda 3 */}
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-            <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-2xl mb-6">📋</div>
-            <h3 className="text-xl font-bold text-slate-900 mb-3">Smluvní pojišťovny</h3>
-            <p className="text-slate-600">
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">Smluvní pojišťovny</h3>
+            <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
               Máme smlouvy s většinou zdravotních pojišťoven: <span className="font-semibold text-slate-800">VZP, ZPMV, ČPZP, OZP, VoZP a RBP</span>.
             </p>
           </div>
