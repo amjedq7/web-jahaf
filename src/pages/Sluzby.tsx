@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 export default function Sluzby() {
+  const [selectedImg, setSelectedImg] = useState<string | null>(null)
+
   const services = [
     {
       title: "Vyšetření močových cest",
@@ -26,6 +30,12 @@ export default function Sluzby() {
     }
   ]
 
+  const equipment = [
+    { name: "Sonograf", src: "/galerie/sonograf.jpg" },
+    { name: "Uroflowmetrie", src: "/galerie/uroflowmetrie.jpg" },
+    { name: "Cystoskop", src: "/galerie/cystoskop.jpg" }
+  ]
+
   return (
     <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
       
@@ -36,17 +46,17 @@ export default function Sluzby() {
         </h1>
       </div>
 
-      {/* Services Grid */}
+      {/* Services Grid (Added clear interactive hover effect + cursor-pointer) */}
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
         {services.map((service, index) => (
           <div 
             key={index}
-            className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-blue-100 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
+            className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 cursor-pointer transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
           >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-700 transition-colors">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
               {service.title}
             </h3>
-            <p className="text-slate-600 leading-relaxed">
+            <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
               {service.desc}
             </p>
           </div>
@@ -54,66 +64,65 @@ export default function Sluzby() {
       </div>
 
       {/* Equipment Section */}
-      <div className="max-w-6xl mx-auto bg-slate-50 rounded-3xl p-8 md:p-16 border border-slate-100">
+      <div className="max-w-6xl mx-auto bg-slate-50 rounded-3xl p-8 md:p-12 lg:p-16 border border-slate-100">
         <h2 className="text-3xl md:text-4xl font-extrabold text-blue-950 text-center mb-12">
           Vybavení ordinace
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-12 text-center">
-          
-          {/* Sonograf */}
-          <div className="flex flex-col items-center">
-            <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 p-4 overflow-hidden group">
-              <img 
-                src="/galerie/sonograf.jpg" 
-                alt="Sonograf" 
-                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement?.classList.add('bg-slate-100');
-                }}
-              />
-              <span className="text-5xl text-slate-300 absolute -z-10">🖥️</span>
-            </div>
-            <h3 className="text-xl font-bold text-slate-900">Sonograf</h3>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+          {equipment.map((item, idx) => (
+            <div key={idx} className="flex flex-col items-center text-center">
+              
+              <div 
+                className="w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer shadow-sm border border-slate-200 group bg-white relative mb-6"
+                onClick={() => setSelectedImg(item.src)}
+              >
+                <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center pointer-events-none">
+                  <svg className="w-12 h-12 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+                
+                <img 
+                  src={item.src} 
+                  alt={item.name} 
+                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </div>
 
-          {/* Uroflowmetrie */}
-          <div className="flex flex-col items-center">
-            <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 p-4 overflow-hidden group">
-              <img 
-                src="/galerie/uroflowmetrie.jpg" 
-                alt="Uroflowmetrie" 
-                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement?.classList.add('bg-slate-100');
-                }}
-              />
-              <span className="text-5xl text-slate-300 absolute -z-10">🔬</span>
+              <h3 className="text-2xl font-bold text-slate-900">{item.name}</h3>
             </div>
-            <h3 className="text-xl font-bold text-slate-900">Uroflowmetrie</h3>
-          </div>
-
-          {/* Cystoskop */}
-          <div className="flex flex-col items-center">
-            <div className="w-48 h-48 sm:w-56 sm:h-56 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 p-4 overflow-hidden group">
-              <img 
-                src="/galerie/cystoskop.jpg" 
-                alt="Cystoskop" 
-                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                  e.currentTarget.parentElement?.classList.add('bg-slate-100');
-                }}
-              />
-              <span className="text-5xl text-slate-300 absolute -z-10">🔦</span>
-            </div>
-            <h3 className="text-xl font-bold text-slate-900">Cystoskop</h3>
-          </div>
-
+          ))}
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {selectedImg && (
+        <div 
+          className="fixed inset-0 z-[100] bg-slate-900/95 flex items-center justify-center p-4 sm:p-8 backdrop-blur-sm animate-fade-in"
+          onClick={() => setSelectedImg(null)}
+        >
+          <button 
+            className="absolute top-4 right-4 sm:top-8 sm:right-8 text-slate-300 hover:text-white transition-colors focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 rounded-full p-2"
+            onClick={() => setSelectedImg(null)}
+            aria-label="Zavřít náhled"
+          >
+            <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          
+          <img 
+            src={selectedImg} 
+            alt="Detailní náhled vybavení" 
+            className="max-w-full max-h-full rounded-lg shadow-xl object-contain cursor-default bg-white p-4"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
     </div>
   )

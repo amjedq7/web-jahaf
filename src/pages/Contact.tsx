@@ -4,9 +4,6 @@ export default function Contact() {
       
       <div className="text-center max-w-7xl mx-auto mb-10">
         <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 mb-4">Kontakt a Ordinační hodiny</h1>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Objednejte se na vyšetření telefonicky nebo nás navštivte přímo v naší ordinaci v centru Teplic.
-        </p>
       </div>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12">

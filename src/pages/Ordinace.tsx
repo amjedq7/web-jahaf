@@ -10,10 +10,7 @@ export default function Ordinace() {
     <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
       
       <div className="text-center max-w-7xl mx-auto mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 mb-4">Naše Ordinace</h1>
-        <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Prohlédněte si prostředí naší moderně vybavené urologické ambulance.
-        </p>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950">Naše Ordinace</h1>
       </div>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
@@ -60,7 +57,7 @@ export default function Ordinace() {
             src={selectedImg} 
             alt="Detailní náhled ordinace" 
             className="max-w-full max-h-full rounded-lg shadow-2xl object-contain cursor-default"
-            onClick={(e) => e.stopPropagation()} // Prevents clicking the image from closing the modal
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}
