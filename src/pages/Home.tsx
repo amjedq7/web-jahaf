@@ -7,7 +7,7 @@ export default function Home() {
       
       {/* HERO SEKCE */}
       <section 
-        className="relative bg-cover bg-center bg-no-repeat min-h-[600px] flex items-center py-24"
+        className="relative bg-cover bg-center bg-no-repeat min-h-[600px] flex items-center py-20 lg:py-24"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-950/80 to-blue-900/40"></div>
@@ -75,7 +75,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-amber-100 text-lg">Dovolená</h4>
-                    <p className="text-sm text-amber-200/80 mt-1">Ve dnech 1. 7. – 15. 7. 2026 bude ordinace uzavřena.</p>
+                    <p className="text-sm text-amber-200/80 mt-1">Momentálně nečerpáme žádnou dovolenou</p>
                   </div>
                 </div>
 
@@ -83,6 +83,43 @@ export default function Home() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* TŘI HLAVNÍ PILÍŘE ORDINACE */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl font-extrabold text-slate-900 mb-4">Proč navštívit naš ordinaci?</h2>
+          <p className="text-slate-600 text-lg">Zakládáme si na profesionalitě, špičkové diagnostice a individuálním přístupu ke každému pacientovi.</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {/* Výhoda 1 */}
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-2xl mb-6">🩺</div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Moderní diagnostika</h3>
+            <p className="text-slate-600">
+              Ordinace je vybavena pro kompletní ultrazvukovou diagnostiku, vyšetřování tumor-markerů (PSA) i provádění biopsií.
+            </p>
+          </div>
+
+          {/* Výhoda 2 */}
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-2xl mb-6">👨‍⚕️</div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Zkušený specialista</h3>
+            <p className="text-slate-600">
+              MUDr. Jahaf má bohaté zkušenosti s léčbou urologických onemocnění. Mluví česky, anglicky, německy a arabsky.
+            </p>
+          </div>
+
+          {/* Výhoda 3 */}
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+            <div className="h-14 w-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 font-bold text-2xl mb-6">📋</div>
+            <h3 className="text-xl font-bold text-slate-900 mb-3">Smluvní pojišťovny</h3>
+            <p className="text-slate-600">
+              Máme smlouvy s většinou zdravotních pojišťoven: <span className="font-semibold text-slate-800">VZP, ZPMV, ČPZP, OZP, VoZP a RBP</span>.
+            </p>
+          </div>
         </div>
       </section>
 
