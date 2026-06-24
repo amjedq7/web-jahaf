@@ -28,18 +28,24 @@ export default function Home() {
               MUDr. Abbas Jahaf nabízí komplexní vyšetření močových cest, prostaty a onkologickou prevenci v moderně vybavené ordinaci.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <Link 
-                to="/kontakt" 
-                className="bg-blue-600 hover:bg-blue-500 text-white text-center px-8 py-3.5 rounded-lg font-semibold shadow-lg transition-colors"
-              >
-                Zobrazit kontakty a ordinaci
-              </Link>
-              <Link 
-                to="/o-klinice" 
+                to="/o-nas" 
                 className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-3.5 rounded-lg font-semibold backdrop-blur-sm border border-white/20 transition-colors"
               >
-                Přehled vyšetření
+                O nás
+              </Link>
+              <Link 
+                to="/sluzby" 
+                className="bg-blue-600 hover:bg-blue-500 text-white text-center px-8 py-3.5 rounded-lg font-semibold shadow-lg transition-colors"
+              >
+                Služby
+              </Link>
+              <Link 
+                to="/kontakt" 
+                className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-3.5 rounded-lg font-semibold backdrop-blur-sm border border-white/20 transition-colors"
+              >
+                Kontakt
               </Link>
             </div>
           </div>
