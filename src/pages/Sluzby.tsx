@@ -1,4 +1,8 @@
 import { useState } from 'react'
+// ZDE JE TO KOUZLO - 100% spolehlivý import obrázků
+import sonografImg from '../assets/galerie/sonograf.jpg'
+import uroflowmetrieImg from '../assets/galerie/uroflowmetrie.jpg'
+import cystoskopImg from '../assets/galerie/cystoskop.jpg'
 
 export default function Sluzby() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null)
@@ -30,11 +34,10 @@ export default function Sluzby() {
     }
   ]
 
-  // Použití import.meta.env.BASE_URL pro správné načítání na GitHub Pages
   const equipment = [
-    { name: "Sonograf", src: `${import.meta.env.BASE_URL}galerie/sonograf.jpg` },
-    { name: "Uroflowmetrie", src: `${import.meta.env.BASE_URL}galerie/uroflowmetrie.jpg` },
-    { name: "Cystoskop", src: `${import.meta.env.BASE_URL}galerie/cystoskop.jpg` }
+    { name: "Sonograf", src: sonografImg },
+    { name: "Uroflowmetrie", src: uroflowmetrieImg },
+    { name: "Cystoskop", src: cystoskopImg }
   ]
 
   return (
