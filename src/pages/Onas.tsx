@@ -1,3 +1,5 @@
+import profileImg from '../assets/galerie/web-jahaf-profile.jpg'
+
 export default function Onas() {
   return (
     <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
@@ -9,16 +11,14 @@ export default function Onas() {
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
         <div className="grid lg:grid-cols-5">
           
-          {/* Left Side: Profile Image */}
           <div className="lg:col-span-2 bg-slate-100 flex justify-center items-center p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-slate-200">
             <img 
-              src="/galerie/web-jahaf-profile.jpg" 
+              src={profileImg} 
               alt="MUDr. Abbas Jahaf" 
               className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-full shadow-lg border-8 border-white"
             />
           </div>
 
-          {/* Right Side: Text Content */}
           <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center bg-slate-100">
             
             <div className="mb-8">
@@ -47,7 +47,6 @@ export default function Onas() {
                   </svg>
                 </div>
                 <div>
-                  {/* Removed the heading text as requested */}
                   <p className="font-bold text-slate-900 text-lg md:text-xl">
                     Čeština, Angličtina, Arabština, Němčina
                   </p>
