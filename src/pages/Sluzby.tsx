@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// ZDE JE TO KOUZLO - 100% spolehlivý import obrázků
 import sonografImg from '../assets/galerie/sonograf.jpg'
 import uroflowmetrieImg from '../assets/galerie/uroflowmetrie.jpg'
 import cystoskopImg from '../assets/galerie/cystoskop.jpg'
@@ -115,7 +114,7 @@ export default function Sluzby() {
           onClick={() => setSelectedImg(null)}
         >
           <button 
-            className="absolute top-4 right-4 sm:top-8 sm:right-8 text-slate-300 hover:text-white transition-colors focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 rounded-full p-2"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 text-slate-300 hover:text-white transition-colors focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 rounded-full p-2 z-50"
             onClick={() => setSelectedImg(null)}
             aria-label="Zavřít náhled"
           >
@@ -127,7 +126,7 @@ export default function Sluzby() {
           <img 
             src={selectedImg} 
             alt="Detailní náhled vybavení" 
-            className="max-w-full max-h-full rounded-lg shadow-xl object-contain cursor-default bg-white p-4"
+            className="w-full h-full max-w-6xl max-h-[85vh] object-contain drop-shadow-[0_0_30px_rgba(0,0,0,0.6)] cursor-default"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
