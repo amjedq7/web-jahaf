@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Ordinace() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null)
@@ -14,6 +14,39 @@ export default function Ordinace() {
       return numA - numB
     })
     .map(key => modules[key] as string)
+
+  // Zjištění indexu aktuálně otevřené fotky
+  const currentIndex = selectedImg ? photos.indexOf(selectedImg) : -1
+
+  // Funkce pro předchozí obrázek
+  const handlePrevious = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation()
+    if (currentIndex !== -1) {
+      const prevIndex = (currentIndex - 1 + photos.length) % photos.length
+      setSelectedImg(photos[prevIndex])
+    }
+  }
+
+  // Funkce pro další obrázek
+  const handleNext = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation()
+    if (currentIndex !== -1) {
+      const nextIndex = (currentIndex + 1) % photos.length
+      setSelectedImg(photos[nextIndex])
+    }
+  }
+
+  // Klávesnicová navigace (šipky doleva/doprava, Escape pro zavření)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImg) return
+      if (e.key === 'ArrowLeft') handlePrevious()
+      if (e.key === 'ArrowRight') handleNext()
+      if (e.key === 'Escape') setSelectedImg(null)
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [selectedImg, currentIndex])
 
   return (
     <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
@@ -45,13 +78,15 @@ export default function Ordinace() {
         ))}
       </div>
 
+      {/* Lightbox Modal */}
       {selectedImg && (
         <div 
           className="fixed inset-0 z-[100] bg-slate-900/95 flex items-center justify-center p-4 sm:p-8 backdrop-blur-sm animate-fade-in"
           onClick={() => setSelectedImg(null)}
         >
+          {/* Zavírací křížek */}
           <button 
-            className="absolute top-4 right-4 sm:top-8 sm:right-8 text-slate-300 hover:text-white transition-colors focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 rounded-full p-2"
+            className="absolute top-4 right-4 sm:top-8 sm:right-8 text-slate-300 hover:text-white transition-colors focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 rounded-full p-2 z-50"
             onClick={() => setSelectedImg(null)}
             aria-label="Zavřít náhled"
           >
@@ -60,12 +95,35 @@ export default function Ordinace() {
             </svg>
           </button>
           
+          {/* Šipka doleva */}
+          <button 
+            className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-slate-300 hover:text-white transition-all focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 hover:scale-110 rounded-full p-2 sm:p-3 z-50"
+            onClick={handlePrevious}
+            aria-label="Předchozí obrázek"
+          >
+            <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Samotná fotka */}
           <img 
             src={selectedImg} 
             alt="Detailní náhled ordinace" 
-            className="max-w-full max-h-full rounded-lg shadow-2xl object-contain cursor-default"
+            className="max-w-full max-h-full rounded-lg shadow-2xl object-contain cursor-default select-none"
             onClick={(e) => e.stopPropagation()}
           />
+
+          {/* Šipka doprava */}
+          <button 
+            className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-slate-300 hover:text-white transition-all focus:outline-none bg-slate-800/50 hover:bg-slate-700/50 hover:scale-110 rounded-full p-2 sm:p-3 z-50"
+            onClick={handleNext}
+            aria-label="Další obrázek"
+          >
+            <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
       )}
       
