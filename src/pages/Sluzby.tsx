@@ -30,72 +30,78 @@ export default function Sluzby() {
     }
   ]
 
+  // Použití import.meta.env.BASE_URL pro správné načítání na GitHub Pages
   const equipment = [
-    { name: "Sonograf", src: "/galerie/sonograf.jpg" },
-    { name: "Uroflowmetrie", src: "/galerie/uroflowmetrie.jpg" },
-    { name: "Cystoskop", src: "/galerie/cystoskop.jpg" }
+    { name: "Sonograf", src: `${import.meta.env.BASE_URL}galerie/sonograf.jpg` },
+    { name: "Uroflowmetrie", src: `${import.meta.env.BASE_URL}galerie/uroflowmetrie.jpg` },
+    { name: "Cystoskop", src: `${import.meta.env.BASE_URL}galerie/cystoskop.jpg` }
   ]
 
   return (
-    <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
+    <div className="animate-fade-in pb-12">
       
-      {/* Header Section */}
-      <div className="text-center max-w-7xl mx-auto mb-12">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950">
-          S čím Vám můžeme pomoci?
-        </h1>
-      </div>
+      {/* HORNÍ SEKCE */}
+      <div className="container mx-auto px-4 pt-0 pb-16">
+        <div className="text-center max-w-7xl mx-auto mb-12">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950">
+            S čím Vám můžeme pomoci?
+          </h1>
+        </div>
 
-      {/* Services Grid (Added clear interactive hover effect + cursor-pointer) */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
-        {services.map((service, index) => (
-          <div 
-            key={index}
-            className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 cursor-pointer transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
-          >
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
-              {service.title}
-            </h3>
-            <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
-              {service.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      {/* Equipment Section */}
-      <div className="max-w-6xl mx-auto bg-slate-50 rounded-3xl p-8 md:p-12 lg:p-16 border border-slate-100">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-950 text-center mb-12">
-          Vybavení ordinace
-        </h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {equipment.map((item, idx) => (
-            <div key={idx} className="flex flex-col items-center text-center">
-              
-              <div 
-                className="w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer shadow-sm border border-slate-200 group bg-white relative mb-6"
-                onClick={() => setSelectedImg(item.src)}
-              >
-                <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center pointer-events-none">
-                  <svg className="w-12 h-12 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
-                </div>
-                
-                <img 
-                  src={item.src} 
-                  alt={item.name} 
-                  className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </div>
-
-              <h3 className="text-2xl font-bold text-slate-900">{item.name}</h3>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {services.map((service, index) => (
+            <div 
+              key={index}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 cursor-pointer transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
+            >
+              <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
+                {service.title}
+              </h3>
+              <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
+                {service.desc}
+              </p>
             </div>
           ))}
+        </div>
+      </div>
+
+      {/* SPODNÍ SEKCE */}
+      <div className="w-full bg-teal-100/30 border-y-2 border-teal-200/50 py-16 lg:py-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-blue-950 text-center mb-12">
+              Vybavení ordinace
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+              {equipment.map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center">
+                  
+                  <div 
+                    className="w-full aspect-[4/3] rounded-2xl overflow-hidden cursor-pointer shadow-md border border-teal-200/50 group bg-white relative mb-6"
+                    onClick={() => setSelectedImg(item.src)}
+                  >
+                    <div className="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center pointer-events-none">
+                      <svg className="w-12 h-12 text-white drop-shadow-md" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </div>
+                    
+                    <img 
+                      src={item.src} 
+                      alt={item.name} 
+                      className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  </div>
+
+                  <h3 className="text-2xl font-bold text-slate-900">{item.name}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
 
