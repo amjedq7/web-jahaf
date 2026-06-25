@@ -6,6 +6,7 @@ import Sluzby from './pages/Sluzby'
 import Pojisteni from './pages/Pojisteni'
 import Ordinace from './pages/Ordinace'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -23,6 +24,8 @@ function App() {
             <Route path="/pojisteni" element={<Pojisteni />} />
             <Route path="/ordinace" element={<Ordinace />} />
             <Route path="/kontakt" element={<Contact />} />
+            {/* Catch-all route pro 404 */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
