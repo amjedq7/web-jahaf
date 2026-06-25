@@ -5,21 +5,33 @@ export default function Contact() {
   const location = useLocation()
   const [highlight, setHighlight] = useState('')
 
-  // Efekt pro zazáření (glow) na základě URL hashe
+  // Efekt pro zazáření (glow) a automatické plynulé scrollování
   useEffect(() => {
     if (location.hash) {
-      // Malé zpoždění, aby efekt začal až po vykreslení stránky
-      const startTimer = setTimeout(() => setHighlight(location.hash), 50)
+      // Zpoždění 150ms dává čas mobilnímu menu, aby se zavřelo, než začneme scrollovat
+      const scrollTimer = setTimeout(() => {
+        const id = location.hash.replace('#', '')
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 150)
+
+      // Spuštění záře s mírným zpožděním
+      const startTimer = setTimeout(() => setHighlight(location.hash), 200)
       
       // Zhasnutí po 2 vteřinách
       const endTimer = setTimeout(() => {
         setHighlight('')
-      }, 2000)
+      }, 2200)
       
       return () => {
+        clearTimeout(scrollTimer)
         clearTimeout(startTimer)
         clearTimeout(endTimer)
       }
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [location.hash, location.key])
 
@@ -41,7 +53,8 @@ export default function Contact() {
         
         {/* Left Column */}
         <div className="flex flex-col gap-6">
-          <div id="kontakt" className={`bg-white p-8 rounded-2xl ${getGlow('#kontakt')} relative bg-white`}>
+          {/* Přidáno scroll-mt-28 pro zajištění mezery pod fixním menu */}
+          <div id="kontakt" className={`bg-white p-8 rounded-2xl ${getGlow('#kontakt')} relative scroll-mt-28`}>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Kontaktní údaje</h2>
             
             <div className="flex flex-col gap-5">
@@ -94,7 +107,8 @@ export default function Contact() {
         </div>
 
         {/* Right Column: Opening Hours */}
-        <div id="hodiny" className={`bg-white p-8 rounded-2xl flex flex-col ${getGlow('#hodiny')} relative bg-white`}>
+        {/* Přidáno scroll-mt-28 pro zajištění mezery pod fixním menu */}
+        <div id="hodiny" className={`bg-white p-8 rounded-2xl flex flex-col ${getGlow('#hodiny')} relative scroll-mt-28`}>
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Ordinační hodiny</h2>
           
           <div className="divide-y divide-slate-100 flex-grow flex flex-col justify-center">
