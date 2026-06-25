@@ -1,4 +1,35 @@
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+
 export default function Contact() {
+  const location = useLocation()
+  const [highlight, setHighlight] = useState('')
+
+  // Efekt pro zazáření (glow) na základě URL hashe
+  useEffect(() => {
+    if (location.hash) {
+      // Malé zpoždění, aby efekt začal až po vykreslení stránky
+      const startTimer = setTimeout(() => setHighlight(location.hash), 50)
+      
+      // Zhasnutí po 2 vteřinách
+      const endTimer = setTimeout(() => {
+        setHighlight('')
+      }, 2000)
+      
+      return () => {
+        clearTimeout(startTimer)
+        clearTimeout(endTimer)
+      }
+    }
+  }, [location.hash, location.key])
+
+  // Funkce, která vrátí CSS třídy pro konkrétní box podle toho, jestli svítí
+  const getGlow = (id: string) => {
+    return highlight === id
+      ? "border-blue-400 ring-4 ring-blue-400/30 shadow-[0_0_35px_rgba(59,130,246,0.35)] scale-[1.02] transition-all duration-300 z-10"
+      : "border-slate-100 shadow-sm transition-all duration-1000"
+  }
+
   return (
     <div className="container mx-auto px-4 pt-0 pb-16 lg:pb-24 animate-fade-in">
       
@@ -10,7 +41,7 @@ export default function Contact() {
         
         {/* Left Column */}
         <div className="flex flex-col gap-6">
-          <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+          <div id="kontakt" className={`bg-white p-8 rounded-2xl ${getGlow('#kontakt')} relative bg-white`}>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Kontaktní údaje</h2>
             
             <div className="flex flex-col gap-5">
@@ -63,7 +94,7 @@ export default function Contact() {
         </div>
 
         {/* Right Column: Opening Hours */}
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col">
+        <div id="hodiny" className={`bg-white p-8 rounded-2xl flex flex-col ${getGlow('#hodiny')} relative bg-white`}>
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Ordinační hodiny</h2>
           
           <div className="divide-y divide-slate-100 flex-grow flex flex-col justify-center">

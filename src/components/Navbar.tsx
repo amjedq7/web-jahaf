@@ -50,10 +50,13 @@ export default function Navbar() {
           <Link to="/sluzby" className={desktopLink("/sluzby")}>Služby</Link>
           <Link to="/pojisteni" className={desktopLink("/pojisteni")}>Pojištění</Link>
           <Link to="/ordinace" className={desktopLink("/ordinace")}>Ordinace</Link>
-          <Link to="/kontakt" className={desktopLink("/kontakt")}>Kontakt</Link>
           
+          {/* Tady jsme přidali kotvu #kontakt */}
+          <Link to="/kontakt#kontakt" className={desktopLink("/kontakt")}>Kontakt</Link>
+          
+          {/* Tady jsme přidali kotvu #hodiny */}
           <Link 
-            to="/kontakt" 
+            to="/kontakt#hodiny" 
             className="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3 rounded-full shadow-sm transition-colors hidden xl:block"
           >
             Ordinační doba
@@ -85,11 +88,11 @@ export default function Navbar() {
             <Link to="/sluzby" onClick={closeMenu} className={mobileLink("/sluzby")}>Služby</Link>
             <Link to="/pojisteni" onClick={closeMenu} className={mobileLink("/pojisteni")}>Pojištění</Link>
             <Link to="/ordinace" onClick={closeMenu} className={mobileLink("/ordinace")}>Ordinace</Link>
-            <Link to="/kontakt" onClick={closeMenu} className={mobileLink("/kontakt")}>Kontakt</Link>
+            <Link to="/kontakt#kontakt" onClick={closeMenu} className={mobileLink("/kontakt")}>Kontakt</Link>
             
             <div className="px-6 mt-5 mb-2">
               <Link 
-                to="/kontakt" 
+                to="/kontakt#hodiny" 
                 onClick={closeMenu}
                 className="block bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-4 rounded-xl shadow-sm transition-colors"
               >
