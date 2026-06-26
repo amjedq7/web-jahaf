@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Phone, Mail, MapPin, Info } from 'lucide-react'
+import { Phone, Mail, MapPin } from 'lucide-react'
 
 export default function Contact() {
   const location = useLocation()
@@ -138,13 +138,6 @@ export default function Contact() {
               <span className="text-lg font-bold text-slate-500">Víkend</span>
               <span className="text-lg text-slate-500 font-bold">Zavřeno</span>
             </div>
-          </div>
-
-          <div className="mt-6 p-5 bg-amber-50 border border-amber-100 rounded-xl">
-            <p className="text-base text-amber-800 flex gap-3 items-start">
-              <span className="text-amber-600 mt-0.5"><Info className="w-6 h-6" /></span>
-              K vyšetření je nutné se předem telefonicky objednat. Akutní případy ošetřujeme po předchozí telefonické domluvě.
-            </p>
           </div>
         </div>
 
