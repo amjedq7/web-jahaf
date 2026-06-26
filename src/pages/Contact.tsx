@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import { Phone, Mail, MapPin, Info } from 'lucide-react'
 
 export default function Contact() {
   const location = useLocation()
   const [highlight, setHighlight] = useState('')
 
-  // Efekt pro zazáření (glow) a automatické plynulé scrollování
   useEffect(() => {
     if (location.hash) {
-      // Zpoždění 150ms dává čas mobilnímu menu, aby se zavřelo, než začneme scrollovat
       const scrollTimer = setTimeout(() => {
         const id = location.hash.replace('#', '')
         const element = document.getElementById(id)
@@ -17,10 +16,8 @@ export default function Contact() {
         }
       }, 150)
 
-      // Spuštění záře s mírným zpožděním
       const startTimer = setTimeout(() => setHighlight(location.hash), 200)
       
-      // Zhasnutí po 2 vteřinách
       const endTimer = setTimeout(() => {
         setHighlight('')
       }, 2200)
@@ -35,7 +32,6 @@ export default function Contact() {
     }
   }, [location.hash, location.key])
 
-  // Funkce, která vrátí CSS třídy pro konkrétní box podle toho, jestli svítí
   const getGlow = (id: string) => {
     return highlight === id
       ? "border-blue-400 ring-4 ring-blue-400/30 shadow-[0_0_35px_rgba(59,130,246,0.35)] scale-[1.02] transition-all duration-300 z-10"
@@ -51,15 +47,15 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12">
         
-        {/* Left Column */}
         <div className="flex flex-col gap-6">
-          {/* Přidáno scroll-mt-28 pro zajištění mezery pod fixním menu */}
           <div id="kontakt" className={`bg-white p-8 rounded-2xl ${getGlow('#kontakt')} relative scroll-mt-28`}>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Kontaktní údaje</h2>
             
             <div className="flex flex-col gap-5">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-xl shrink-0">📞</div>
+                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+                  <Phone className="w-6 h-6" />
+                </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Telefon</p>
                   <a href="tel:+420770666268" className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">
@@ -69,7 +65,9 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-xl shrink-0">✉️</div>
+                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+                  <Mail className="w-6 h-6" />
+                </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">E-mail</p>
                   <a href="mailto:ordinace@urologie-jahaf.cz" className="text-lg font-bold text-slate-900 hover:text-blue-600 transition-colors">
@@ -79,7 +77,9 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-xl shrink-0">📍</div>
+                <div className="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 shrink-0">
+                  <MapPin className="w-6 h-6" />
+                </div>
                 <div>
                   <p className="text-sm text-slate-500 font-medium">Adresa ordinace</p>
                   <p className="text-lg font-medium text-slate-900">
@@ -106,8 +106,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Right Column: Opening Hours */}
-        {/* Přidáno scroll-mt-28 pro zajištění mezery pod fixním menu */}
         <div id="hodiny" className={`bg-white p-8 rounded-2xl flex flex-col ${getGlow('#hodiny')} relative scroll-mt-28`}>
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Ordinační hodiny</h2>
           
@@ -144,7 +142,7 @@ export default function Contact() {
 
           <div className="mt-6 p-5 bg-amber-50 border border-amber-100 rounded-xl">
             <p className="text-base text-amber-800 flex gap-3 items-start">
-              <span className="text-amber-600 mt-0.5 text-xl">ℹ️</span>
+              <span className="text-amber-600 mt-0.5"><Info className="w-6 h-6" /></span>
               K vyšetření je nutné se předem telefonicky objednat. Akutní případy ošetřujeme po předchozí telefonické domluvě.
             </p>
           </div>

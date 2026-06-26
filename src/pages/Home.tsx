@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Megaphone } from 'lucide-react'
 import bgImage from '../assets/web-jahaf-background.jpeg'
 
 export default function Home() {
@@ -54,7 +55,7 @@ export default function Home() {
           <div className="w-full lg:w-2/5 max-w-md mx-auto lg:mx-0">
             <div className="bg-slate-900/50 backdrop-blur-md border border-white/20 rounded-2xl p-6 lg:p-8 shadow-2xl">
               <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-3">
-                <span className="text-2xl">📢</span> Aktuální informace
+                <Megaphone className="w-6 h-6 text-blue-400" /> Aktuální informace
               </h3>
               
               <div className="space-y-4">
