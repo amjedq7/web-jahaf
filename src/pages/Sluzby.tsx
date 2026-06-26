@@ -54,7 +54,7 @@ export default function Sluzby() {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 cursor-pointer transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]"
             >
               <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                 {service.title}
@@ -67,7 +67,7 @@ export default function Sluzby() {
         </div>
       </div>
 
-      {/* SPODNÍ SEKCE - Odstraněno tyrkysové pozadí */}
+      {/* SPODNÍ SEKCE */}
       <div className="w-full py-16 lg:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -79,7 +79,6 @@ export default function Sluzby() {
               {equipment.map((item, idx) => (
                 <div key={idx} className="flex flex-col items-center text-center">
                   
-                  {/* Odstraněno bílé pozadí, rámeček a stíny pro dokonalé prolnutí transparentních obrázků */}
                   <div 
                     className="w-full aspect-[4/3] overflow-hidden cursor-pointer group relative mb-6 flex items-center justify-center"
                     onClick={() => setSelectedImg(item.src)}
