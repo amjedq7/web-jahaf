@@ -73,7 +73,7 @@ export default function Home() {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Výhoda 1 */}
           <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-lg hover:-translate-y-1 hover:border-blue-300 transition-all duration-300 group flex flex-col items-center text-center justify-center min-h-[200px]">
-            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">Moderní diagnostika</h3>
+            <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">Moderná diagnostika</h3>
             <p className="text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors">
               Ordinace je vybavena pro kompletní ultrazvukovou diagnostiku, vyšetřování tumor-markerů (PSA) i provádění biopsií.
             </p>
