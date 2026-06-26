@@ -52,8 +52,12 @@ export default function Footer() {
 
         </div>
 
-        <div className="max-w-6xl mx-auto border-t border-slate-800 mt-8 pt-6 text-center text-slate-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Urologie Jahaf. Všechna práva vyhrazena.</p>
+        {/* Bottom Bar */}
+        <div className="max-w-6xl mx-auto border-t border-slate-800 mt-8 pt-6 text-center text-sm text-slate-500">
+          <p className="mb-1">&copy; {new Date().getFullYear()} Urologie Jahaf. Všechna práva vyhrazena.</p>
+          <p>
+            Vytvořil <a href="https://github.com/amjedq7" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors font-semibold">AmjedQ7</a>
+          </p>
         </div>
       </div>
     </footer>
