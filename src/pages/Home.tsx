@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Megaphone } from 'lucide-react'
 import bgImage from '../assets/web-jahaf-background.jpeg'
 
@@ -16,74 +15,45 @@ export default function Home() {
         <div className="container mx-auto px-4 z-10 text-white flex flex-col lg:flex-row gap-12 lg:gap-8 items-center justify-between">
           
           {/* Levá strana - Hlavní text */}
-          <div className="max-w-2xl lg:w-3/5">
-            <span className="bg-blue-500/20 text-blue-200 border border-blue-400/30 px-4 py-1.5 rounded-full text-sm font-bold tracking-widest uppercase inline-block">
-              Urologická ordinace Teplice
-            </span>
-            
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mt-6 mb-6 leading-tight">
+          <div className="max-w-2xl lg:w-1/2">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
               Odborná urologická péče pro vaše zdraví
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-slate-200 leading-relaxed max-w-xl">
               MUDr. Abbas Jahaf nabízí komplexní vyšetření močových cest, prostaty a onkologickou prevenci v moderně vybavené ordinaci.
             </p>
-
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
-              <Link 
-                to="/o-nas" 
-                className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-3.5 rounded-lg font-semibold backdrop-blur-sm border border-white/20 transition-colors"
-              >
-                O nás
-              </Link>
-              <Link 
-                to="/sluzby" 
-                className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-3.5 rounded-lg font-semibold backdrop-blur-sm border border-white/20 transition-colors"
-              >
-                Služby
-              </Link>
-              <Link 
-                to="/kontakt" 
-                className="bg-white/10 hover:bg-white/20 text-white text-center px-8 py-3.5 rounded-lg font-semibold backdrop-blur-sm border border-white/20 transition-colors"
-              >
-                Kontakt
-              </Link>
-            </div>
           </div>
 
           {/* Pravá strana - Informační panel */}
-          <div className="w-full lg:w-2/5 max-w-md mx-auto lg:mx-0">
-            <div className="bg-slate-900/50 backdrop-blur-md border border-white/20 rounded-2xl p-6 lg:p-8 shadow-2xl">
-              <h3 className="text-xl font-bold text-white mb-5 flex items-center gap-3">
+          <div className="w-full lg:w-1/2 max-w-lg mx-auto lg:mx-0 lg:ml-auto">
+            <div className="bg-slate-900/60 backdrop-blur-md border border-slate-700/50 rounded-2xl p-6 lg:p-8 shadow-2xl">
+              <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                 <Megaphone className="w-6 h-6 text-blue-400" /> Aktuální informace
               </h3>
               
-              <div className="space-y-4">
+              <div className="bg-slate-800/80 border border-slate-700/50 rounded-xl p-5 lg:p-6">
                 
                 {/* Přijímáme nové pacienty */}
-                <div className="bg-emerald-500/20 border border-emerald-400/30 rounded-xl p-4 flex items-start gap-4">
-                  <div className="text-emerald-400 mt-0.5">
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="text-emerald-400 bg-emerald-500/20 p-2 rounded-lg shrink-0">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-emerald-100 text-lg">Přijímáme nové pacienty</h4>
-                    <p className="text-sm text-emerald-200/80 mt-1">Kapacita ordinace aktuálně umožňuje registraci nových pacientů.</p>
-                  </div>
+                  <h4 className="font-semibold text-emerald-400 text-lg">Přijímáme nové pacienty</h4>
                 </div>
 
-                {/* Upozornění na dovolenou */}
-                <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-4 flex items-start gap-4">
-                  <div className="text-amber-400 mt-0.5">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-amber-100 text-lg">Dovolená</h4>
-                    <p className="text-sm text-amber-200/80 mt-1">Momentálně nečerpáme žádnou dovolenou</p>
-                  </div>
+                {/* Oddělovač a informace o dovolené */}
+                <div className="border-t border-slate-700/50 pt-5">
+                  <p className="text-sky-300 flex items-center gap-3 font-medium text-base">
+                    <span className="text-sky-400 shrink-0 bg-sky-500/20 p-1.5 rounded-lg">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </span>
+                    Momentálně nečerpáme žádnou dovolenou.
+                  </p>
                 </div>
 
               </div>
