@@ -2,11 +2,14 @@ import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin } from 'lucide-react'
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="bg-slate-900 text-slate-300 mt-auto">
       <div className="container mx-auto px-4 py-8 lg:py-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-8 lg:gap-10">
           
+          {/* Brand Info (Left) */}
           <div className="max-w-sm flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-2xl font-extrabold text-white tracking-wider mb-2">
               UROLOGIE JAHAF
@@ -16,6 +19,7 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* Navigation Links (Middle) */}
           <div className="flex flex-col items-center md:items-start mt-4 md:mt-0">
             <div className="grid grid-cols-2 gap-x-8 md:gap-x-12 gap-y-3 w-fit text-center md:text-left">
               <h4 className="text-lg font-bold text-white mb-2 col-span-2">Menu</h4>
@@ -29,6 +33,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Contact Info (Right) */}
           <div className="flex flex-col items-center md:items-start mt-4 md:mt-0">
             <Link to="/kontakt" className="text-lg font-bold text-white hover:text-blue-400 transition-colors mb-4 w-fit block text-center md:text-left">
               Kontakt
@@ -52,12 +57,20 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="max-w-6xl mx-auto border-t border-slate-800 mt-8 pt-6 text-center text-sm text-slate-500">
-          <p className="mb-1">&copy; {new Date().getFullYear()} Urologie Jahaf. Všechna práva vyhrazena.</p>
-          <p>
-            Vytvořil <a href="https://github.com/amjedq7" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors font-semibold">AmjedQ7</a>
+        {/* Bottom Bar s právními náležitostmi - zjednodušeno */}
+        <div className="max-w-6xl mx-auto border-t border-slate-800 mt-10 pt-6 flex flex-col items-center gap-3 text-sm text-slate-500">
+          <p className="text-center">
+            &copy; {currentYear} JAHAF UROLOGIE s.r.o. <span className="hidden sm:inline mx-1">|</span><br className="sm:hidden" /> IČO: 19748612
           </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+            <Link to="/ochrana-udaju" className="hover:text-blue-400 transition-colors">
+              Zásady ochrany osobních údajů
+            </Link>
+            <span className="hidden sm:inline text-slate-700">•</span>
+            <p>
+              Vytvořil <a href="https://github.com/amjedq7" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors font-bold">AmjedQ7</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

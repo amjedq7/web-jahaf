@@ -48,6 +48,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 lg:gap-12">
         
         <div className="flex flex-col gap-6">
+          {/* Kontaktní údaje */}
           <div id="kontakt" className={`bg-white p-8 rounded-2xl ${getGlow('#kontakt')} relative scroll-mt-28`}>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Kontaktní údaje</h2>
             
@@ -91,10 +92,11 @@ export default function Contact() {
             </div>
           </div>
 
+          {/* Mapa */}
           <div className="bg-slate-200 h-72 sm:h-80 rounded-2xl overflow-hidden border border-slate-100 relative shadow-sm">
             <iframe 
               title="Mapa ordinace - Krupská 3291, Teplice"
-              src="https://maps.google.com/maps?q=Krupsk%C3%A1%203291,%20415%2001%20Teplice&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              src="https://maps.google.com/maps?q=Krupsk%C3%A1%203291,%20Teplice&t=&z=15&ie=UTF8&iwloc=&output=embed"
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -106,37 +108,53 @@ export default function Contact() {
           </div>
         </div>
 
-        <div id="hodiny" className={`bg-white p-8 rounded-2xl flex flex-col ${getGlow('#hodiny')} relative scroll-mt-28`}>
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Ordinační hodiny</h2>
-          
-          <div className="divide-y divide-slate-100 flex-grow flex flex-col justify-center">
-            <div className="py-5 flex justify-between items-center">
-              <span className="text-lg font-bold text-slate-700">Pondělí</span>
-              <span className="text-lg text-slate-900 font-bold">15:00 - 18:00</span>
+        <div className="flex flex-col gap-6">
+          {/* Ordinační hodiny */}
+          <div id="hodiny" className={`bg-white p-8 rounded-2xl flex flex-col ${getGlow('#hodiny')} relative scroll-mt-28`}>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">Ordinační hodiny</h2>
+            
+            <div className="divide-y divide-slate-100 flex-grow flex flex-col justify-center">
+              <div className="py-5 flex justify-between items-center">
+                <span className="text-lg font-bold text-slate-700">Pondělí</span>
+                <span className="text-lg text-slate-900 font-bold">15:00 - 18:00</span>
+              </div>
+              <div className="py-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
+                <span className="text-lg font-bold text-slate-700">Úterý</span>
+                <span className="text-lg text-slate-900 font-bold text-left sm:text-right">
+                  07:00 - 12:00 <span className="hidden sm:inline text-slate-400 mx-1">|</span><br className="sm:hidden" /> 13:00 - 17:00
+                </span>
+              </div>
+              <div className="py-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
+                <span className="text-lg font-bold text-slate-700">Středa</span>
+                <span className="text-lg text-slate-900 font-bold text-left sm:text-right">
+                  07:00 - 12:00 <span className="hidden sm:inline text-slate-400 mx-1">|</span><br className="sm:hidden" /> 13:00 - 17:00
+                </span>
+              </div>
+              <div className="py-5 flex justify-between items-center">
+                <span className="text-lg font-bold text-slate-700">Čtvrtek</span>
+                <span className="text-lg text-slate-900 font-bold">15:00 - 18:00</span>
+              </div>
+              <div className="py-5 flex justify-between items-center">
+                <span className="text-lg font-bold text-slate-700">Pátek</span>
+                <span className="text-lg text-slate-900 font-bold">07:00 - 13:00</span>
+              </div>
+              <div className="py-5 flex justify-between items-center opacity-50">
+                <span className="text-lg font-bold text-slate-500">Víkend</span>
+                <span className="text-lg text-slate-500 font-bold">Zavřeno</span>
+              </div>
             </div>
-            <div className="py-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
-              <span className="text-lg font-bold text-slate-700">Úterý</span>
-              <span className="text-lg text-slate-900 font-bold text-left sm:text-right">
-                07:00 - 12:00 <span className="hidden sm:inline text-slate-400 mx-1">|</span><br className="sm:hidden" /> 13:00 - 17:00
-              </span>
-            </div>
-            <div className="py-5 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
-              <span className="text-lg font-bold text-slate-700">Středa</span>
-              <span className="text-lg text-slate-900 font-bold text-left sm:text-right">
-                07:00 - 12:00 <span className="hidden sm:inline text-slate-400 mx-1">|</span><br className="sm:hidden" /> 13:00 - 17:00
-              </span>
-            </div>
-            <div className="py-5 flex justify-between items-center">
-              <span className="text-lg font-bold text-slate-700">Čtvrtek</span>
-              <span className="text-lg text-slate-900 font-bold">15:00 - 18:00</span>
-            </div>
-            <div className="py-5 flex justify-between items-center">
-              <span className="text-lg font-bold text-slate-700">Pátek</span>
-              <span className="text-lg text-slate-900 font-bold">07:00 - 13:00</span>
-            </div>
-            <div className="py-5 flex justify-between items-center opacity-50">
-              <span className="text-lg font-bold text-slate-500">Víkend</span>
-              <span className="text-lg text-slate-500 font-bold">Zavřeno</span>
+          </div>
+
+          {/* Povinné informace podle § 435 NOZ */}
+          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h3 className="text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider">Identifikační údaje</h3>
+            <div className="text-sm text-slate-600 space-y-2 leading-relaxed">
+              <p><strong className="text-slate-800 font-semibold">JAHAF UROLOGIE s.r.o.</strong></p>
+              <p><strong>Sídlo:</strong> Dlouhá 40/70, Nové Modlany, 417 42 Krupka</p>
+              <p><strong>IČO:</strong> 19748612</p>
+              <p>
+                Společnost je zapsána v obchodním rejstříku vedeném Krajským soudem v Ústí nad Labem, oddíl C, vložka 51064.
+              </p>
             </div>
           </div>
         </div>
