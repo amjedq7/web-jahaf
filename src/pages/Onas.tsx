@@ -8,10 +8,10 @@ export default function Onas() {
         <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950">O nás</h1>
       </div>
 
-      <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
         <div className="grid lg:grid-cols-5">
           
-          <div className="lg:col-span-2 bg-slate-100 flex justify-center items-center p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-slate-200">
+          <div className="lg:col-span-2 flex justify-center items-center p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-slate-100">
             <img 
               src={profileImg} 
               alt="MUDr. Abbas Jahaf" 
@@ -19,7 +19,7 @@ export default function Onas() {
             />
           </div>
 
-          <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center bg-slate-100">
+          <div className="lg:col-span-3 p-8 md:p-14 flex flex-col justify-center">
             
             <div className="mb-8">
               <h1 className="text-4xl md:text-5xl font-extrabold text-blue-950 mb-3">
@@ -30,18 +30,18 @@ export default function Onas() {
               </h2>
             </div>
 
-            <div className="space-y-6 text-slate-900 leading-relaxed text-lg font-medium">
+            <div className="space-y-6 text-slate-600 leading-relaxed text-lg">
               <p>
                 Vystudoval Lékařskou fakultu Masarykovy univerzity v Brně v roce 1998. V roce 2002 získal atestaci I. stupně pro obor Urologie – první stupeň.
               </p>
               <p>
-                V roce 2009 získal specializovanou způsobilost. Dále získal diplom celoživotního vzdělávání, je članem Lékařské komory ČR. Je také členem české a mezinárodních urologických společností.
+                V roce 2009 získal specializovanou způsobilost. Dále získal diplom celoživotního vzdělávání, je členem Lékařské komory ČR. Je také členem české a mezinárodních urologických společností.
               </p>
             </div>
 
-            <div className="mt-10 pt-8 border-t border-slate-200">
+            <div className="mt-10 pt-8 border-t border-slate-100">
               <div className="flex items-center gap-5">
-                <div className="w-14 h-14 bg-white shadow-sm border border-slate-200 rounded-2xl flex items-center justify-center text-blue-700 text-2xl shrink-0">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                   </svg>
