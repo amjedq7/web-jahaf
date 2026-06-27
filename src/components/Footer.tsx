@@ -68,7 +68,7 @@ export default function Footer() {
             </Link>
             <span className="hidden sm:inline text-slate-700">•</span>
             <p>
-              Vytvořil <a href="https://github.com/amjedq7" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors font-bold">AmjedQ7</a>
+              Vytvořil <a href="https://amjedq7.github.io/portfolio/" target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-blue-400 transition-colors font-bold">AmjedQ7</a>
             </p>
           </div>
         </div>
